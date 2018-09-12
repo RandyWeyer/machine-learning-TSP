@@ -9,7 +9,6 @@ let allPoints = [];
 function initCanvas() {
   canvas = new fabric.Canvas(
     'canvas', {
-    // isDrawingMode: true
     selection: false
     });
 }
@@ -79,14 +78,11 @@ function currentPermatationWeight(currentPermatation) {
   var tempDistance = 0.0;
   // Find the distance of the current Permutation
   for (var i = 0; i < allPoints.length - 1; i++) {
-    // console.log(allPoints[i][0]);
     // Distance formula adds to temp distance
     tempDistance += Math.sqrt(((currentPermatation[i][0] - currentPermatation[i+1][0]) * (currentPermatation[i][0] - currentPermatation[i+1][0])) + ((currentPermatation[i][1] - currentPermatation[i+1][1]) * (currentPermatation[i][1] - currentPermatation[i+1][1])))
   }
   // Add distance from the last to the first element
-  // console.log(currentPermatation.length);
   tempDistance += Math.sqrt(((currentPermatation[currentPermatation.length - 1][0] - currentPermatation[0][0]) * (currentPermatation[currentPermatation.length - 1][0] - currentPermatation[0][0])) + ((currentPermatation[currentPermatation.length - 1][1] - currentPermatation[0][1]) * (currentPermatation[currentPermatation.length - 1][1] - currentPermatation[0][1])))
-  // console.log(tempDistance);
   return tempDistance;
 }
 
@@ -94,7 +90,6 @@ function bruteForce() {
   var allPermutations = permutator(allPoints);
 
   for (var i = 0; i < allPermutations.length; i++) {
-    // console.log(allPermutations[i]);
     var tempWeight = currentPermatationWeight(allPermutations[i]);
     if(tempWeight < bestWeight){
       bestWeight = tempWeight;
@@ -112,9 +107,6 @@ function bruteForce() {
         stroke: 'red'
     }));
   }
-  // canvas.add(new fabric.Line([bestPath[this.length][0], bestPath[this.length][1], bestPath[0][0], bestPath[0][1]], {
-  //     stroke: 'red'
-  // }));
 }
 
 

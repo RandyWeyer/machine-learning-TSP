@@ -174,7 +174,7 @@ function trainMachine(){
 }
 
 function useMachine(){
-  net.run(allPoints);
+  console.log(myNetwork.activate(allPoints));
 }
 
 

@@ -19,7 +19,6 @@ function getRandomInt(max) {
 
 function draw8Points() {
   for (var i = 0; i < 8; i++) {
-        console.log(allPoints);
     origX = getRandomInt(canvasX);
     origY = getRandomInt(canvasY);
     circle = new fabric.Circle({
@@ -39,7 +38,6 @@ function draw8Points() {
 }
 function draw20Points() {
   for (var i = 0; i < 20; i++) {
-        console.log(allPoints);
     origX = getRandomInt(canvasX);
     origY = getRandomInt(canvasY);
     circle = new fabric.Circle({
@@ -74,7 +72,6 @@ const permutator = (inputArr) => {
  }
 
  permute(inputArr)
-console.log(result);
  return result;
 }
 
@@ -100,7 +97,6 @@ function bruteForce() {
     // console.log(allPermutations[i]);
     var tempWeight = currentPermatationWeight(allPermutations[i]);
     if(tempWeight < bestWeight){
-      console.log(tempWeight);
       bestWeight = tempWeight;
       bestPath = allPermutations[i];
     }
@@ -115,7 +111,6 @@ function bruteForce() {
     canvas.add(new fabric.Line([bestPath[i][0], bestPath[i][1], bestPath[i+1][0], bestPath[i+1][1]], {
         stroke: 'red'
     }));
-    console.log(bestPath[i]);
   }
   // canvas.add(new fabric.Line([bestPath[this.length][0], bestPath[this.length][1], bestPath[0][0], bestPath[0][1]], {
   //     stroke: 'red'
